@@ -41,6 +41,19 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
         return currentCell
     }
     
+    // Edit table
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.Delete {
+            listArray.removeAtIndex(indexPath.row)
+            // Save data after data is changed
+            let fixedArray = listArray
+            NSUserDefaults.standardUserDefaults().setObject(fixedArray, forKey: "listArray")
+            NSUserDefaults.standardUserDefaults().synchronize()
+            // Refresh data in view in realtime
+            self.tableView.reloadData()
+        }
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let detailVC = segue.destinationViewController as DetailViewController
         let indexPath = self.tableView.indexPathForSelectedRow()
