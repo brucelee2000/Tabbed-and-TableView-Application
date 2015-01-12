@@ -17,7 +17,8 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
     @IBAction func addButtonPressed(sender: UIButton) {
         let newTitle = titleTextField.text
         let newDetails = detailsTextField.text
-        listArray.append((title:newTitle, details:newDetails))
+        let newItem:Dictionary<String,String> = ["title":newTitle, "details":newDetails]
+        listArray.append(newItem)
               
         if titleTextField.isFirstResponder() {
             titleTextField.resignFirstResponder()

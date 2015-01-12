@@ -8,12 +8,14 @@
 
 import UIKit
 
-
+/*
 typealias ToDoList = (title:String, details:String)
 
 var listArray:[ToDoList] = [("Buy water","Furified"),
     ("Buy bread", "French"),
     ("Go to Gym", "Gold's GYM")]
+*/
+var listArray:[Dictionary<String, String>] = []
 
 class FirstViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
    
@@ -39,9 +41,9 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var currentCell = tableView.dequeueReusableCellWithIdentifier("myCell", forIndexPath: indexPath) as UITableViewCell
-        let (title, details) = listArray[indexPath.row]
-        currentCell.textLabel?.text = title
-        currentCell.detailTextLabel?.text = details
+        let currentItem = listArray[indexPath.row]
+        currentCell.textLabel?.text = currentItem["title"]
+        currentCell.detailTextLabel?.text = currentItem["details"]
         
         return currentCell
     }

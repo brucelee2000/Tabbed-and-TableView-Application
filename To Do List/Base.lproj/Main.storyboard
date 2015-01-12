@@ -81,19 +81,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j5o-yM-fQx">
-                                <rect key="frame" x="16" y="106" width="115" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="115" id="OGH-Nd-BRK"/>
-                                    <constraint firstAttribute="height" constant="21" id="tNh-2Q-tJ0"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task details" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0co-2J-8hS">
                                 <rect key="frame" x="16" y="191" width="115" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j5o-yM-fQx">
+                                <rect key="frame" x="16" y="106" width="115" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="115" id="OGH-Nd-BRK"/>
+                                    <constraint firstAttribute="height" constant="45" id="tNh-2Q-tJ0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -102,7 +102,7 @@
                         <constraints>
                             <constraint firstItem="j5o-yM-fQx" firstAttribute="top" secondItem="YbG-bm-j6b" secondAttribute="bottom" constant="42" id="61f-d6-Ngb"/>
                             <constraint firstItem="0co-2J-8hS" firstAttribute="leading" secondItem="j5o-yM-fQx" secondAttribute="leading" id="S5C-fk-V5h"/>
-                            <constraint firstItem="0co-2J-8hS" firstAttribute="top" secondItem="j5o-yM-fQx" secondAttribute="bottom" constant="64" id="dSR-zg-UxC"/>
+                            <constraint firstItem="0co-2J-8hS" firstAttribute="top" secondItem="j5o-yM-fQx" secondAttribute="bottom" constant="40" id="dSR-zg-UxC"/>
                             <constraint firstItem="j5o-yM-fQx" firstAttribute="leading" secondItem="vAj-hD-jzl" secondAttribute="leadingMargin" id="sDu-Er-doT"/>
                             <constraint firstItem="j5o-yM-fQx" firstAttribute="trailing" secondItem="0co-2J-8hS" secondAttribute="trailing" id="tOf-gr-Lck"/>
                         </constraints>

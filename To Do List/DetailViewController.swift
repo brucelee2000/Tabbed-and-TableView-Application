@@ -10,7 +10,7 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
-    var currentTask:ToDoList?
+    var currentTask:Dictionary<String, String> = ["title":"", "details":""]
     
     @IBOutlet weak var taskTitle: UILabel!
     
@@ -39,10 +39,8 @@ class DetailViewController: UIViewController {
     */
     
     override func viewWillAppear(animated: Bool) {
-        if let (title, details) = currentTask {
-            self.taskTitle.text = title
-            self.taskDetails.text = details
-        }
+        self.taskTitle.text = currentTask["title"]
+        self.taskDetails.text = currentTask["details"]
     }
 
 }
