@@ -8,13 +8,6 @@
 
 import UIKit
 
-/*
-typealias ToDoList = (title:String, details:String)
-
-var listArray:[ToDoList] = [("Buy water","Furified"),
-    ("Buy bread", "French"),
-    ("Go to Gym", "Gold's GYM")]
-*/
 var listArray:[Dictionary<String, String>] = []
 
 class FirstViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
@@ -56,7 +49,13 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     override func viewWillAppear(animated: Bool) {
-        self.tableView.reloadData()
+        // Load data from save
+        if var storedData:AnyObject = NSUserDefaults.standardUserDefaults().objectForKey("listArray") {
+            listArray.removeAll(keepCapacity: false)
+            for var i=0; i<storedData.count; i++ {
+                listArray.append(storedData[i] as Dictionary)
+            }
+        }
     }
     
 }

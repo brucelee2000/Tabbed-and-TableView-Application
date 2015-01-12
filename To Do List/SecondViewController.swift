@@ -19,7 +19,13 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
         let newDetails = detailsTextField.text
         let newItem:Dictionary<String,String> = ["title":newTitle, "details":newDetails]
         listArray.append(newItem)
-              
+        
+        // Permanently save data: only can be used for fixed length data structure
+        // - keep overwriting if the key is the same
+        let fixedArray = listArray
+        NSUserDefaults.standardUserDefaults().setObject(fixedArray, forKey: "listArray")
+        NSUserDefaults.standardUserDefaults().synchronize()
+                    
         if titleTextField.isFirstResponder() {
             titleTextField.resignFirstResponder()
         } else if detailsTextField.isFirstResponder() {
